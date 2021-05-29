@@ -6,9 +6,6 @@ body {
   background: #781ac3;
   background: linear-gradient(175deg, #781ac3 36%, #0894b1 100%); }
 
-#opacity {
-  opacity: 0; }
-
 .bg-light {
   background-color: #222222 !important; }
 

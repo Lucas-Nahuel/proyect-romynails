@@ -70,14 +70,16 @@ $(document).ready(function() {
     });
   });
   
-  const $form = document.querySelector('#reservation')
-  const $buttonMailto = document.querySelector('#trucazo')
 
-  $form.addEventListener('submit', handleSubmit)
+  function sendEmail(params) {
+    let tempParams={
+      from_name:document.getElementById("email").value,
+      to_name:document.getElementById("name").value,
+      message:document.getElementById("service").value,
+    };
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = new FormData(this)
-    $buttonMailto.setAttribute('href', `mailto:lukitasr8@gmail.com?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('service')}`)
-    $buttonMailto.click()
+    emailjs.send('service_9dznz7a', 'template_wjj3lgm', tempParams)
+    .then(function(res){
+      console.log("seccess", res.status);
+    })
   }

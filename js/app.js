@@ -71,15 +71,16 @@ $(document).ready(function() {
   });
   
 
-  function sendEmail(params) {
-    let tempParams={
-      from_name:document.getElementById("email").value,
-      to_name:document.getElementById("name").value,
-      message:document.getElementById("service").value,
-    };
 
-    emailjs.send('service_9dznz7a', 'template_wjj3lgm', tempParams)
-    .then(function(res){
-      console.log("seccess", res.status);
-    })
-  }
+  var templateParams={
+    Email:document.getElementById("email").value,
+    name:document.getElementById("name").value,
+    service:document.getElementById("service").value,
+  };
+  
+  emailjs.send('service_p1lepsv', 'template_wjj3lgm', templateParams)
+  .then(function(response){
+    console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+    console.log('FAILED...', error);
+  });

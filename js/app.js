@@ -149,3 +149,5 @@ $(document).ready(function() {
       return false;
     });
   });
+
+  //////////// validar el form

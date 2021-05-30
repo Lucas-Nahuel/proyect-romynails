@@ -71,20 +71,21 @@ $(document).ready(function() {
   });
   
 
-function sendMail(){
-  var templateParams={
-    email:document.getElementById("email").value,
-    name:document.getElementById("name").value,
-    surname:document.getElementById("surname").value,
-    service:document.getElementById("service").value,
-    date:document.getElementById("date").value,
-    schedule:document.getElementById("schedule").value,
+  function sendMail() {
+
+    var templateParams = {
+      name: document.getElementById('name').value,
+      surname: document.getElementById('surname').value,
+      mobile: document.getElementById('mobile').value,
+      message: document.getElementById('message').value,
+      email: document.getElementById('email').value,
+      date: document.getElementById('date').value,
+      schedule: document.getElementById('schedule').value
+    };
+    
+    emailjs.send("service_qw3ytyi", "template_wjj3lgm", templateParams)
+    .then(function(response) {
+      console.log("SUCCESS!", response.status, response.text);
+    })
   };
-  
-  emailjs.send('service_p1lepsv', 'template_wjj3lgm', templateParams)
-  .then(function(response){
-    console.log('SUCCESS!', response.status, response.text);
-  }, function(error) {
-    console.log('FAILED...', error);
-  });
-};
+    

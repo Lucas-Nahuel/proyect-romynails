@@ -71,11 +71,14 @@ $(document).ready(function() {
   });
   
 
-
+function sendMail(){
   var templateParams={
-    Email:document.getElementById("email").value,
+    email:document.getElementById("email").value,
     name:document.getElementById("name").value,
+    surname:document.getElementById("surname").value,
     service:document.getElementById("service").value,
+    date:document.getElementById("date").value,
+    schedule:document.getElementById("schedule").value,
   };
   
   emailjs.send('service_p1lepsv', 'template_wjj3lgm', templateParams)
@@ -84,3 +87,4 @@ $(document).ready(function() {
   }, function(error) {
     console.log('FAILED...', error);
   });
+};

@@ -71,9 +71,8 @@ $(document).ready(function() {
   });
   
 
-  function sendMail() {
-
-    var templateParams = {
+  const sendMail = async () => {
+    let templateParams = {
       name: document.getElementById('name').value,
       surname: document.getElementById('surname').value,
       mobile: document.getElementById('mobile').value,
@@ -81,11 +80,11 @@ $(document).ready(function() {
       email: document.getElementById('email').value,
       date: document.getElementById('date').value,
       schedule: document.getElementById('schedule').value
-    };
-    
-    emailjs.send("service_qw3ytyi", "template_wjj3lgm", templateParams)
+    }
+    await emailjs.send("service_qw3ytyi", "template_wjj3lgm", templateParams)
     .then(function(response) {
-      console.log("SUCCESS!", response.status, response.text);
+      alert("se envio tu turno, espere a ser contactado", response.status, response.text);
+      window.location.reload();
     })
   };
     

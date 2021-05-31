@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
         {img: '../images/imagen16.jpg'},
         {img: '../images/imagen17.jpg'},
         {img: '../images/imagen18.jpg'}
-    ]
+    ];
     let contador = 0
     const contenedor = document.querySelector('.slideshow')
     const overlay = document.querySelector('.overlay')
